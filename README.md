@@ -1,6 +1,8 @@
 # SpenditTable
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+Angular CLI version is 12.2.18.
+Node version is 14.16.1. 
+Start the App with the command on the Angular CLI "ng serve".
 
 ## Development server
 
