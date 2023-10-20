@@ -1,0 +1,72 @@
+/* Stilying the Host component */
+:host {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  display: block;
+  width: max-content;
+}
+
+div#table-container {
+  width: max-content;
+}
+
+table#spendit-table {
+  background-color: #e3def2b3;
+  border-collapse: collapse;
+  text-align: center;
+  min-width: 40rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-style: hidden; /* Hide table borders */
+  box-shadow: 0 0 0 1px #e1cfff; /* Adding alternative table borders  */
+  border-left: none;
+  border-right: none;
+  &th,
+  td {
+    padding: 0.8rem 1rem;
+    border-left: none;
+    border-right: none;
+  }
+  th {
+    padding: 1rem;
+  }
+  td {
+    border: 1px solid #e1cfff;
+    border-left: none;
+    border-right: none;
+  }
+  thead {
+    background-color: #cbb6cd87;
+  }
+}
+
+div.pagination {
+  text-align: right;
+  margin: 1rem 0 1rem 0.4rem;
+  button {
+    cursor: pointer;
+    &.prev-btn,
+    &.next-btn {
+      border: none;
+      border-radius: 4px;
+      background-color: #d72690;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      margin-right: 0.4rem;
+      &:disabled,
+      &[disabled] {
+        background-color: #d899bf70;
+        pointer-events: none;
+      }
+    }
+    &.prev-btn {
+      margin-right: 0.4rem;
+    }
+    &.next-btn {
+      margin-left: 0.4rem;
+      margin-right: 0;
+    }
+  }
+}

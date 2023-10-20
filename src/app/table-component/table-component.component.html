@@ -1,0 +1,29 @@
+<div id="table-container">
+  <table id="spendit-table">
+    <thead>
+      <ng-container *ngIf="rowSelection">
+        <th class="checkbox-column">
+          <input type="checkbox" (change)="toggleAllSelection()" />
+        </th>
+      </ng-container>
+      <ng-content select="[custom-header]"></ng-content>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of paginatedData">
+        <!-- Show checkboxes only if user uses selection and if row is not empty -->
+        <td *ngIf="rowSelection ">
+          <input type="checkbox" [disabled]="(row | json) == ({} | json)" [checked]="selectedRows.includes(row)"
+            (change)="toggleSelection(row)" />
+        </td>
+        <ng-container *ngFor="let column of row | keyvalue: columnsOrder">
+          <td>{{ column.value }}</td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination">
+    <button class="prev-btn" (click)="changePage(-1)" [disabled]="isPrevButtonDisabled()">Previous</button>
+    <span>Page {{ currentPage }}</span>
+    <button class="next-btn" (click)="changePage(1)" [disabled]="isNextButtonDisabled()">Next</button>
+  </div>
+</div>
